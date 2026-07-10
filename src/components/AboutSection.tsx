@@ -58,7 +58,7 @@ export default function AboutSection() {
           {/* Interactive Navigation Panel on Right (Misión, Visión, Quiénes somos) */}
           <div className="lg:col-span-5">
             <div className="bg-slate-950/80 border border-slate-800 p-6 rounded-2xl shadow-xl shadow-slate-950/40 relative">
-              <div className="flex gap-2 mb-6 border-b border-slate-800 pb-3" id="about-nav-tabs">
+              <div className="grid grid-cols-3 gap-1 sm:gap-2 mb-6 border-b border-slate-800 pb-3" id="about-nav-tabs">
                 {[
                   { id: "nosotros", label: "Trayectoria", icon: Compass },
                   { id: "mision", label: "Misión", icon: Target },
@@ -69,14 +69,14 @@ export default function AboutSection() {
                     <button
                       key={tab.id}
                       onClick={() => setActiveTab(tab.id as any)}
-                      className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-lg text-xs font-semibold tracking-wide transition-all focus:outline-none cursor-pointer ${
+                      className={`flex items-center justify-center gap-1.5 sm:gap-2 py-2 px-1 sm:px-3 rounded-lg text-[10px] sm:text-xs font-semibold tracking-wide transition-all focus:outline-none cursor-pointer ${
                         activeTab === tab.id
                           ? "bg-brand-primary text-[#19354C] font-bold shadow-md shadow-brand-primary/10"
                           : "text-slate-400 hover:text-slate-200 hover:bg-slate-900"
                       }`}
                     >
-                      <TabIcon className="h-3.5 w-3.5" />
-                      <span>{tab.label}</span>
+                      <TabIcon className="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0" />
+                      <span className="truncate">{tab.label}</span>
                     </button>
                   );
                 })}
