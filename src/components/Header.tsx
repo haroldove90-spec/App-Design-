@@ -62,7 +62,7 @@ export default function Header({ onQuoteClick }: HeaderProps) {
       id="main-header"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-slate-950/90 backdrop-blur-md border-b border-blue-900/30 py-4 shadow-lg shadow-blue-950/20"
+          ? "bg-brand-dark/90 backdrop-blur-md border-b border-blue-900/30 py-4 shadow-lg shadow-blue-950/20"
           : "bg-transparent py-6"
       }`}
     >
@@ -97,7 +97,7 @@ export default function Header({ onQuoteClick }: HeaderProps) {
               }}
               className={`text-sm font-medium tracking-wide transition-all relative py-1 focus:outline-none ${
                 activeSection === link.target
-                  ? "text-blue-400 font-semibold"
+                  ? "text-brand-primary font-semibold"
                   : "text-slate-300 hover:text-white"
               }`}
             >
@@ -105,7 +105,7 @@ export default function Header({ onQuoteClick }: HeaderProps) {
               {activeSection === link.target && (
                 <motion.div
                   layoutId="activeIndicator"
-                  className="absolute bottom-0 left-0 right-0 h-[2px] bg-blue-500 rounded-full"
+                  className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-primary rounded-full"
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                 />
               )}
@@ -127,7 +127,7 @@ export default function Header({ onQuoteClick }: HeaderProps) {
           
           <button
             onClick={onQuoteClick}
-            className="bg-blue-600 text-white hover:bg-blue-500 px-5 py-2.5 rounded-xl font-medium text-sm flex items-center gap-2 transition-all shadow-lg shadow-blue-600/20 active:scale-95 cursor-pointer"
+            className="bg-brand-primary text-[#19354C] hover:bg-brand-primary/90 px-5 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 transition-all shadow-lg shadow-brand-primary/20 active:scale-95 cursor-pointer"
             id="header-cta-btn"
           >
             <span>Cotiza Ahora</span>
@@ -154,7 +154,7 @@ export default function Header({ onQuoteClick }: HeaderProps) {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden bg-slate-950 border-b border-blue-900/30 overflow-hidden"
+            className="md:hidden bg-brand-dark border-b border-blue-900/30 overflow-hidden"
             id="mobile-nav-drawer"
           >
             <div className="px-6 py-6 flex flex-col gap-5">
@@ -164,7 +164,7 @@ export default function Header({ onQuoteClick }: HeaderProps) {
                   onClick={() => handleNavClick(link.target)}
                   className={`text-left text-base font-semibold py-2 border-b border-slate-900 focus:outline-none ${
                     activeSection === link.target
-                      ? "text-blue-400 pl-2 border-l-2 border-l-blue-500 pl-4"
+                      ? "text-brand-primary pl-2 border-l-2 border-l-brand-primary pl-4"
                       : "text-slate-300 hover:text-white"
                   }`}
                 >
@@ -175,9 +175,9 @@ export default function Header({ onQuoteClick }: HeaderProps) {
               <div className="flex flex-col gap-4 mt-4 pt-2">
                 <a
                   href={`tel:${CONTACT_INFO.phone}`}
-                  className="flex items-center gap-3 text-slate-300 hover:text-blue-400 py-1"
+                  className="flex items-center gap-3 text-slate-300 hover:text-brand-primary py-1"
                 >
-                  <PhoneCall className="h-5 w-5 text-blue-500" />
+                  <PhoneCall className="h-5 w-5 text-brand-primary" />
                   <span className="font-mono text-sm">{CONTACT_INFO.phone}</span>
                 </a>
                 <a
@@ -195,7 +195,7 @@ export default function Header({ onQuoteClick }: HeaderProps) {
                     setIsMobileMenuOpen(false);
                     onQuoteClick();
                   }}
-                  className="bg-blue-600 text-white hover:bg-blue-500 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all mt-2"
+                  className="bg-brand-primary text-[#19354C] hover:bg-brand-primary/90 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all mt-2 cursor-pointer"
                   id="mobile-cta-btn"
                 >
                   <span>Cotizar Proyecto</span>

@@ -10,7 +10,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-slate-950 border-t border-slate-900 pt-16 pb-8 text-left text-slate-400 text-sm">
+    <footer className="bg-brand-dark border-t border-slate-900/50 pt-16 pb-8 text-left text-slate-400 text-sm">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-12">
         
         {/* Column 1: Brand & Desc */}
@@ -38,14 +38,14 @@ export default function Footer() {
             </a>
             <a
               href={`tel:${CONTACT_INFO.phone}`}
-              className="text-slate-400 hover:text-blue-400 bg-slate-900 p-2.5 rounded-full border border-slate-800 transition-colors"
+              className="text-slate-400 hover:text-brand-primary bg-slate-900 p-2.5 rounded-full border border-slate-800 transition-colors"
               aria-label="Llamar por teléfono"
             >
               <PhoneCall className="h-4 w-4" />
             </a>
             <a
               href={`mailto:${CONTACT_INFO.email}`}
-              className="text-slate-400 hover:text-blue-400 bg-slate-900 p-2.5 rounded-full border border-slate-800 transition-colors"
+              className="text-slate-400 hover:text-brand-primary bg-slate-900 p-2.5 rounded-full border border-slate-800 transition-colors"
               aria-label="Enviar correo"
             >
               <Mail className="h-4 w-4" />
@@ -67,7 +67,7 @@ export default function Footer() {
               <li key={link.target}>
                 <button
                   onClick={() => handleScrollTo(link.target)}
-                  className="hover:text-blue-400 transition-colors focus:outline-none cursor-pointer"
+                  className="hover:text-brand-primary transition-colors focus:outline-none cursor-pointer"
                 >
                   {link.label}
                 </button>
@@ -81,19 +81,19 @@ export default function Footer() {
           <h4 className="text-white font-bold text-xs uppercase tracking-wider font-mono">Contacto</h4>
           <ul className="space-y-3.5 text-xs sm:text-sm">
             <li className="flex gap-2.5 items-start">
-              <PhoneCall className="h-4 w-4 text-blue-500 shrink-0 mt-0.5" />
+              <PhoneCall className="h-4 w-4 text-brand-primary shrink-0 mt-0.5" />
               <div>
                 <span className="text-[10px] text-slate-500 font-mono block uppercase">Línea Telefónica</span>
-                <a href={`tel:${CONTACT_INFO.phone}`} className="text-white hover:text-blue-400 font-mono font-bold">
+                <a href={`tel:${CONTACT_INFO.phone}`} className="text-white hover:text-brand-primary font-mono font-bold">
                   {CONTACT_INFO.phone}
                 </a>
               </div>
             </li>
             <li className="flex gap-2.5 items-start">
-              <Mail className="h-4 w-4 text-blue-500 shrink-0 mt-0.5" />
+              <Mail className="h-4 w-4 text-brand-primary shrink-0 mt-0.5" />
               <div className="min-w-0">
                 <span className="text-[10px] text-slate-500 font-mono block uppercase">Correo Corporativo</span>
-                <a href={`mailto:${CONTACT_INFO.email}`} className="text-white hover:text-blue-400 break-all text-xs sm:text-sm font-semibold">
+                <a href={`mailto:${CONTACT_INFO.email}`} className="text-white hover:text-brand-primary break-all text-xs sm:text-sm font-semibold">
                   {CONTACT_INFO.email}
                 </a>
               </div>
@@ -106,7 +106,7 @@ export default function Footer() {
           <h4 className="text-white font-bold text-xs uppercase tracking-wider font-mono">Sucursales</h4>
           <div className="space-y-3 text-xs">
             {BRANCHES.map((b) => (
-              <div key={b.name} className="border-l-2 border-l-blue-900 pl-3">
+              <div key={b.name} className="border-l-2 border-l-brand-primary/40 pl-3">
                 <span className="text-white font-bold block">{b.name}</span>
                 <span className="text-slate-500 text-[11px] block mt-0.5">{b.address}, {b.city}</span>
               </div>

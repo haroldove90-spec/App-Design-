@@ -151,15 +151,15 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
   };
 
   return (
-    <section id="cotizador" className="py-24 bg-slate-900 border-t border-slate-800/60 relative overflow-hidden">
+    <section id="cotizador" className="py-24 bg-brand-dark border-t border-slate-800/30 relative overflow-hidden">
       {/* Decorative Lights */}
-      <div className="absolute top-0 left-1/4 w-[300px] h-[300px] rounded-full bg-blue-600/5 blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[300px] h-[300px] rounded-full bg-brand-primary/5 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] rounded-full bg-purple-600/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Title */}
         <div className="text-center mb-16">
-          <span className="text-xs font-bold font-mono tracking-widest text-blue-500 uppercase block mb-3">
+          <span className="text-xs font-bold font-mono tracking-widest text-brand-primary uppercase block mb-3">
             Cotizador Interactivo
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4 tracking-tight">
@@ -176,7 +176,7 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
             {/* Services Options List */}
             <div className="bg-slate-950/80 border border-slate-800 p-6 sm:p-8 rounded-2xl">
               <h3 className="text-white font-bold text-lg mb-6 flex items-center gap-2">
-                <Calculator className="h-5 w-5 text-blue-500" />
+                <Calculator className="h-5 w-5 text-brand-primary" />
                 <span>1. Selecciona los servicios requeridos</span>
               </h3>
 
@@ -186,12 +186,12 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
                   onClick={() => toggleService("logos")}
                   className={`flex items-start gap-4 p-4 rounded-xl border text-left transition-all focus:outline-none cursor-pointer ${
                     selectedServices.logos
-                      ? "bg-blue-950/40 border-blue-500 shadow-md shadow-blue-500/5"
+                      ? "bg-brand-primary/10 border-brand-primary shadow-md shadow-brand-primary/5"
                       : "bg-slate-900/40 border-slate-800 hover:border-slate-700"
                   }`}
                 >
                   <div className={`mt-0.5 w-5 h-5 rounded-md flex items-center justify-center shrink-0 border ${
-                    selectedServices.logos ? "bg-blue-500 border-blue-500 text-white" : "border-slate-700"
+                    selectedServices.logos ? "bg-brand-primary border-brand-primary text-[#19354C]" : "border-slate-700"
                   }`}>
                     {selectedServices.logos && <Check className="h-3 w-3 stroke-[3]" />}
                   </div>
@@ -206,12 +206,12 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
                   onClick={() => toggleService("impresa")}
                   className={`flex items-start gap-4 p-4 rounded-xl border text-left transition-all focus:outline-none cursor-pointer ${
                     selectedServices.impresa
-                      ? "bg-blue-950/40 border-blue-500 shadow-md shadow-blue-500/5"
+                      ? "bg-brand-primary/10 border-brand-primary shadow-md shadow-brand-primary/5"
                       : "bg-slate-900/40 border-slate-800 hover:border-slate-700"
                   }`}
                 >
                   <div className={`mt-0.5 w-5 h-5 rounded-md flex items-center justify-center shrink-0 border ${
-                    selectedServices.impresa ? "bg-blue-500 border-blue-500 text-white" : "border-slate-700"
+                    selectedServices.impresa ? "bg-brand-primary border-brand-primary text-[#19354C]" : "border-slate-700"
                   }`}>
                     {selectedServices.impresa && <Check className="h-3 w-3 stroke-[3]" />}
                   </div>
@@ -226,12 +226,12 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
                   onClick={() => toggleService("web")}
                   className={`flex items-start gap-4 p-4 rounded-xl border text-left transition-all focus:outline-none cursor-pointer ${
                     selectedServices.web
-                      ? "bg-blue-950/40 border-blue-500 shadow-md shadow-blue-500/5"
+                      ? "bg-brand-primary/10 border-brand-primary shadow-md shadow-brand-primary/5"
                       : "bg-slate-900/40 border-slate-800 hover:border-slate-700"
                   }`}
                 >
                   <div className={`mt-0.5 w-5 h-5 rounded-md flex items-center justify-center shrink-0 border ${
-                    selectedServices.web ? "bg-blue-500 border-blue-500 text-white" : "border-slate-700"
+                    selectedServices.web ? "bg-brand-primary border-brand-primary text-[#19354C]" : "border-slate-700"
                   }`}>
                     {selectedServices.web && <Check className="h-3 w-3 stroke-[3]" />}
                   </div>
@@ -246,12 +246,12 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
                   onClick={() => toggleService("ecommerce")}
                   className={`flex items-start gap-4 p-4 rounded-xl border text-left transition-all focus:outline-none cursor-pointer ${
                     selectedServices.ecommerce
-                      ? "bg-blue-950/40 border-blue-500 shadow-md shadow-blue-500/5"
+                      ? "bg-brand-primary/10 border-brand-primary shadow-md shadow-brand-primary/5"
                       : "bg-slate-900/40 border-slate-800 hover:border-slate-700"
                   }`}
                 >
                   <div className={`mt-0.5 w-5 h-5 rounded-md flex items-center justify-center shrink-0 border ${
-                    selectedServices.ecommerce ? "bg-blue-500 border-blue-500 text-white" : "border-slate-700"
+                    selectedServices.ecommerce ? "bg-brand-primary border-brand-primary text-[#19354C]" : "border-slate-700"
                   }`}>
                     {selectedServices.ecommerce && <Check className="h-3 w-3 stroke-[3]" />}
                   </div>
@@ -266,12 +266,12 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
                   onClick={() => toggleService("apps")}
                   className={`flex items-start gap-4 p-4 rounded-xl border text-left transition-all focus:outline-none cursor-pointer ${
                     selectedServices.apps
-                      ? "bg-blue-950/40 border-blue-500 shadow-md shadow-blue-500/5"
+                      ? "bg-brand-primary/10 border-brand-primary shadow-md shadow-brand-primary/5"
                       : "bg-slate-900/40 border-slate-800 hover:border-slate-700"
                   }`}
                 >
                   <div className={`mt-0.5 w-5 h-5 rounded-md flex items-center justify-center shrink-0 border ${
-                    selectedServices.apps ? "bg-blue-500 border-blue-500 text-white" : "border-slate-700"
+                    selectedServices.apps ? "bg-brand-primary border-brand-primary text-[#19354C]" : "border-slate-700"
                   }`}>
                     {selectedServices.apps && <Check className="h-3 w-3 stroke-[3]" />}
                   </div>
@@ -286,12 +286,12 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
                   onClick={() => toggleService("erp")}
                   className={`flex items-start gap-4 p-4 rounded-xl border text-left transition-all focus:outline-none cursor-pointer ${
                     selectedServices.erp
-                      ? "bg-blue-950/40 border-blue-500 shadow-md shadow-blue-500/5"
+                      ? "bg-brand-primary/10 border-brand-primary shadow-md shadow-brand-primary/5"
                       : "bg-slate-900/40 border-slate-800 hover:border-slate-700"
                   }`}
                 >
                   <div className={`mt-0.5 w-5 h-5 rounded-md flex items-center justify-center shrink-0 border ${
-                    selectedServices.erp ? "bg-blue-500 border-blue-500 text-white" : "border-slate-700"
+                    selectedServices.erp ? "bg-brand-primary border-brand-primary text-[#19354C]" : "border-slate-700"
                   }`}>
                     {selectedServices.erp && <Check className="h-3 w-3 stroke-[3]" />}
                   </div>
@@ -313,17 +313,17 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
                   className="bg-slate-950/80 border border-slate-800 p-6 sm:p-8 rounded-2xl"
                 >
                   <h3 className="text-white font-bold text-lg mb-6 flex items-center gap-2">
-                    <Sparkles className="h-5 w-5 text-blue-500 animate-pulse" />
+                    <Sparkles className="h-5 w-5 text-brand-primary animate-pulse" />
                     <span>2. Ajusta los parámetros de tu proyecto</span>
                   </h3>
 
                   <div className="space-y-6">
                     {/* WEB PAGES COUNT SLIDER */}
                     {selectedServices.web && (
-                      <div className="space-y-2">
+                       <div className="space-y-2">
                         <div className="flex justify-between items-center text-sm font-medium">
                           <label className="text-slate-300">Número de Páginas (Sitio Web):</label>
-                          <span className="text-blue-400 font-mono font-bold text-base bg-blue-950/50 px-3 py-1 rounded-md">
+                          <span className="text-brand-primary font-mono font-bold text-base bg-brand-primary/10 px-3 py-1 rounded-md">
                             {pagesCount} páginas
                           </span>
                         </div>
@@ -333,7 +333,7 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
                           max="25"
                           value={pagesCount}
                           onChange={(e) => setPagesCount(Number(e.target.value))}
-                          className="w-full h-2 bg-slate-900 rounded-lg appearance-none cursor-pointer accent-blue-500"
+                          className="w-full h-2 bg-slate-900 rounded-lg appearance-none cursor-pointer accent-brand-primary"
                         />
                         <span className="text-[10px] text-slate-500 block text-right">
                           (Incluye 1 página base, cada página extra agrega $1,200 MXN)
@@ -343,10 +343,10 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
 
                     {/* ECOMMERCE ITEM COUNT SLIDER */}
                     {selectedServices.ecommerce && (
-                      <div className="space-y-2">
+                       <div className="space-y-2">
                         <div className="flex justify-between items-center text-sm font-medium">
                           <label className="text-slate-300">Productos iniciales en catálogo:</label>
-                          <span className="text-blue-400 font-mono font-bold text-base bg-blue-950/50 px-3 py-1 rounded-md">
+                          <span className="text-brand-primary font-mono font-bold text-base bg-brand-primary/10 px-3 py-1 rounded-md">
                             {itemsCount} productos
                           </span>
                         </div>
@@ -357,7 +357,7 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
                           step="5"
                           value={itemsCount}
                           onChange={(e) => setItemsCount(Number(e.target.value))}
-                          className="w-full h-2 bg-slate-900 rounded-lg appearance-none cursor-pointer accent-blue-500"
+                          className="w-full h-2 bg-slate-900 rounded-lg appearance-none cursor-pointer accent-brand-primary"
                         />
                         <span className="text-[10px] text-slate-500 block text-right">
                           (Incluye 20 productos iniciales de cortesía, cada producto extra agrega $150 MXN)
@@ -367,10 +367,10 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
 
                     {/* ERP LICENSES SLIDER */}
                     {selectedServices.erp && (
-                      <div className="space-y-2">
+                       <div className="space-y-2">
                         <div className="flex justify-between items-center text-sm font-medium">
                           <label className="text-slate-300">Número de Roles/Accesos de Usuarios:</label>
-                          <span className="text-blue-400 font-mono font-bold text-base bg-blue-950/50 px-3 py-1 rounded-md">
+                          <span className="text-brand-primary font-mono font-bold text-base bg-brand-primary/10 px-3 py-1 rounded-md">
                             {userRoleCount} usuarios
                           </span>
                         </div>
@@ -380,7 +380,7 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
                           max="25"
                           value={userRoleCount}
                           onChange={(e) => setUserRoleCount(Number(e.target.value))}
-                          className="w-full h-2 bg-slate-900 rounded-lg appearance-none cursor-pointer accent-blue-500"
+                          className="w-full h-2 bg-slate-900 rounded-lg appearance-none cursor-pointer accent-brand-primary"
                         />
                         <span className="text-[10px] text-slate-500 block text-right">
                           (Incluye 1 usuario administrador base, cada usuario/rol extra agrega $3,500 MXN)
@@ -397,8 +397,8 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
           <div className="lg:col-span-5" id="calculator-totals">
             <div className="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl sticky top-28">
               {/* Cost Highlight */}
-              <div className="bg-gradient-to-r from-blue-900/40 via-blue-950/50 to-indigo-950/40 p-6 sm:p-8 text-center border-b border-slate-800 relative">
-                <span className="text-xs text-blue-400 font-mono tracking-widest block mb-2 uppercase">
+              <div className="bg-gradient-to-r from-[#19354C]/80 via-slate-950 to-[#19354C]/80 p-6 sm:p-8 text-center border-b border-slate-800 relative">
+                <span className="text-xs text-brand-primary font-mono tracking-widest block mb-2 uppercase">
                   Presupuesto Preliminar
                 </span>
                 <div className="text-3xl sm:text-4xl font-extrabold text-white font-mono tracking-tight my-1">
@@ -411,7 +411,7 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
                 )}
                 
                 {/* Decorative glowing dots */}
-                <div className="absolute top-4 right-4 w-1.5 h-1.5 rounded-full bg-blue-500 animate-ping" />
+                <div className="absolute top-4 right-4 w-1.5 h-1.5 rounded-full bg-brand-primary animate-ping" />
               </div>
 
               {/* Form or success message */}
@@ -438,7 +438,7 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
                           value={name}
                           onChange={(e) => setName(e.target.value)}
                           placeholder="Ej. Juan Pérez"
-                          className="w-full bg-slate-900 border border-slate-800 focus:border-blue-500 rounded-xl px-4 py-3 text-white text-sm focus:outline-none transition-all"
+                          className="w-full bg-slate-900 border border-slate-800 focus:border-brand-primary rounded-xl px-4 py-3 text-white text-sm focus:outline-none transition-all"
                         />
                       </div>
 
@@ -453,7 +453,7 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="juan@empresa.com"
-                            className="w-full bg-slate-900 border border-slate-800 focus:border-blue-500 rounded-xl px-4 py-3 text-white text-sm focus:outline-none transition-all"
+                            className="w-full bg-slate-900 border border-slate-800 focus:border-brand-primary rounded-xl px-4 py-3 text-white text-sm focus:outline-none transition-all"
                           />
                         </div>
                         <div>
@@ -465,7 +465,7 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
                             value={phone}
                             onChange={(e) => setPhone(e.target.value)}
                             placeholder="5512345678"
-                            className="w-full bg-slate-900 border border-slate-800 focus:border-blue-500 rounded-xl px-4 py-3 text-white text-sm focus:outline-none transition-all"
+                            className="w-full bg-slate-900 border border-slate-800 focus:border-brand-primary rounded-xl px-4 py-3 text-white text-sm focus:outline-none transition-all"
                           />
                         </div>
                       </div>
@@ -479,7 +479,7 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
                           value={message}
                           onChange={(e) => setMessage(e.target.value)}
                           placeholder="Cuéntanos un poco sobre tu giro o requerimiento..."
-                          className="w-full bg-slate-900 border border-slate-800 focus:border-blue-500 rounded-xl px-4 py-3 text-white text-sm focus:outline-none transition-all resize-none"
+                          className="w-full bg-slate-900 border border-slate-800 focus:border-brand-primary rounded-xl px-4 py-3 text-white text-sm focus:outline-none transition-all resize-none"
                         />
                       </div>
 
@@ -488,7 +488,7 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
                         <button
                           type="submit"
                           disabled={isSubmitting}
-                          className="w-full bg-blue-600 text-white hover:bg-blue-500 py-3.5 px-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-md shadow-blue-500/10 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="w-full bg-brand-primary text-[#19354C] hover:bg-brand-primary/90 py-3.5 px-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-md shadow-brand-primary/10 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                           id="submit-quote-form"
                         >
                           {isSubmitting ? (

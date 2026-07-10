@@ -7,15 +7,15 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contacto" className="py-24 bg-slate-950 relative overflow-hidden">
+    <section id="contacto" className="py-24 bg-brand-dark relative overflow-hidden">
       {/* Decorative backdrop shapes */}
-      <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-blue-900/10 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-brand-primary/10 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-10 w-[300px] h-[300px] rounded-full bg-indigo-900/10 blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Title Block */}
         <div className="text-center mb-16">
-          <span className="text-xs font-bold font-mono tracking-widest text-blue-500 uppercase block mb-3">
+          <span className="text-xs font-bold font-mono tracking-widest text-brand-primary uppercase block mb-3">
             Atención Inmediata
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4 tracking-tight" id="contact-title">
@@ -41,7 +41,7 @@ export default function ContactSection() {
                   href={`tel:${CONTACT_INFO.phone}`}
                   className="flex gap-4 items-start p-4 rounded-xl hover:bg-slate-950 transition-colors group"
                 >
-                  <div className="bg-blue-900/30 text-blue-400 p-3 rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-colors shrink-0">
+                  <div className="bg-brand-primary/10 text-brand-primary p-3 rounded-xl group-hover:bg-brand-primary group-hover:text-[#19354C] transition-colors shrink-0">
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
@@ -74,12 +74,12 @@ export default function ContactSection() {
                   href={`mailto:${CONTACT_INFO.email}`}
                   className="flex gap-4 items-start p-4 rounded-xl hover:bg-slate-950 transition-colors group"
                 >
-                  <div className="bg-blue-900/30 text-blue-400 p-3 rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-colors shrink-0">
+                  <div className="bg-brand-primary/10 text-brand-primary p-3 rounded-xl group-hover:bg-brand-primary group-hover:text-[#19354C] transition-colors shrink-0">
                     <Mail className="h-5 w-5" />
                   </div>
                   <div className="min-w-0">
                     <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider block">Correo Electrónico</span>
-                    <span className="text-white font-bold text-sm sm:text-base truncate block mt-0.5 group-hover:text-blue-400">
+                    <span className="text-white font-bold text-sm sm:text-base truncate block mt-0.5 group-hover:text-brand-primary">
                       {CONTACT_INFO.email}
                     </span>
                   </div>
@@ -90,11 +90,11 @@ export default function ContactSection() {
             {/* Support and Assurance tags */}
             <div className="border-t border-slate-800/80 pt-6 mt-8 space-y-3">
               <div className="flex items-center gap-3 text-slate-400 text-xs sm:text-sm">
-                <Clock className="h-4 w-4 text-blue-500" />
+                <Clock className="h-4 w-4 text-brand-primary" />
                 <span>Atención de Lunes a Sábado</span>
               </div>
               <div className="flex items-center gap-3 text-slate-400 text-xs sm:text-sm">
-                <ShieldCheck className="h-4 w-4 text-blue-500" />
+                <ShieldCheck className="h-4 w-4 text-brand-primary" />
                 <span>Garantía técnica de soporte continuo</span>
               </div>
             </div>
@@ -109,23 +109,23 @@ export default function ContactSection() {
               >
                 {/* Pin ornament design */}
                 <div className="flex justify-between items-start mb-8">
-                  <div className="bg-blue-900/20 text-blue-400 p-3.5 rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-all shadow-md">
+                  <div className="bg-brand-primary/10 text-brand-primary p-3.5 rounded-2xl group-hover:bg-brand-primary group-hover:text-[#19354C] transition-all shadow-md">
                     <MapPin className="h-6 w-6" />
                   </div>
-                  <span className="text-[10px] font-bold font-mono tracking-wider text-blue-500 uppercase bg-blue-950/60 border border-blue-900/40 px-3 py-1 rounded-full">
+                  <span className="text-[10px] font-bold font-mono tracking-wider text-brand-primary uppercase bg-brand-primary/10 border border-brand-primary/30 px-3 py-1 rounded-full">
                     Sede Física
                   </span>
                 </div>
 
                 <div>
-                  <h4 className="text-white font-extrabold text-lg mb-4 group-hover:text-blue-400 transition-colors">
+                  <h4 className="text-white font-extrabold text-lg mb-4 group-hover:text-brand-primary transition-colors">
                     {branch.name}
                   </h4>
                   <div className="space-y-1.5 text-slate-300 text-sm">
                     <p className="font-semibold">{branch.address}</p>
                     {branch.colony && <p className="text-slate-400">{branch.colony}</p>}
                     <p className="text-slate-400">{branch.city}</p>
-                    <p className="text-blue-400 font-mono text-xs font-semibold pt-1">
+                    <p className="text-brand-primary font-mono text-xs font-semibold pt-1">
                       {branch.cp}
                     </p>
                   </div>

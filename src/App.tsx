@@ -32,7 +32,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 font-sans text-slate-300 selection:bg-blue-600 selection:text-white antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-brand-dark font-sans text-slate-300 selection:bg-blue-600 selection:text-white antialiased overflow-x-hidden">
       {/* Premium Sticky Navigation */}
       <Header onQuoteClick={handleQuoteClick} />
 

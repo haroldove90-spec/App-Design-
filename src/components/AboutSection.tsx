@@ -32,16 +32,16 @@ export default function AboutSection() {
   };
 
   return (
-    <section id="nosotros" className="py-24 bg-slate-900 relative overflow-hidden">
+    <section id="nosotros" className="py-24 bg-brand-dark relative overflow-hidden">
       {/* Decorative Blur elements */}
-      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] rounded-full bg-blue-900/10 blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] rounded-full bg-brand-primary/10 blur-[100px] pointer-events-none" />
       <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full bg-indigo-900/10 blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* SECTION 1: WELCOME & GENERAL DESCRIPTION */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24">
           <div className="lg:col-span-7 text-left">
-            <span className="text-xs font-bold font-mono tracking-widest text-blue-500 uppercase block mb-3">
+            <span className="text-xs font-bold font-mono tracking-widest text-brand-primary uppercase block mb-3">
               ¿Quiénes Somos?
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6 tracking-tight">
@@ -71,7 +71,7 @@ export default function AboutSection() {
                       onClick={() => setActiveTab(tab.id as any)}
                       className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-lg text-xs font-semibold tracking-wide transition-all focus:outline-none cursor-pointer ${
                         activeTab === tab.id
-                          ? "bg-blue-600 text-white shadow-md shadow-blue-600/10"
+                          ? "bg-brand-primary text-[#19354C] font-bold shadow-md shadow-brand-primary/10"
                           : "text-slate-400 hover:text-slate-200 hover:bg-slate-900"
                       }`}
                     >
@@ -91,7 +91,7 @@ export default function AboutSection() {
                     transition={{ duration: 0.3 }}
                   >
                     <h3 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
-                      <Compass className="h-5 w-5 text-blue-400" />
+                      <Compass className="h-5 w-5 text-brand-primary" />
                       <span>Más de 20 años de experiencia</span>
                     </h3>
                     <p className="text-slate-400 text-sm leading-relaxed">
@@ -107,7 +107,7 @@ export default function AboutSection() {
                     transition={{ duration: 0.3 }}
                   >
                     <h3 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
-                      <Target className="h-5 w-5 text-blue-400" />
+                      <Target className="h-5 w-5 text-brand-primary" />
                       <span>Nuestra Misión</span>
                     </h3>
                     <p className="text-slate-400 text-sm leading-relaxed">
@@ -123,7 +123,7 @@ export default function AboutSection() {
                     transition={{ duration: 0.3 }}
                   >
                     <h3 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
-                      <Eye className="h-5 w-5 text-blue-400" />
+                      <Eye className="h-5 w-5 text-brand-primary" />
                       <span>Nuestra Visión</span>
                     </h3>
                     <p className="text-slate-400 text-sm leading-relaxed">
@@ -138,7 +138,7 @@ export default function AboutSection() {
 
         {/* SECTION 2: 4 VALORES AGREGADOS (Why Choose Us?) */}
         <div className="mb-24 text-center">
-          <span className="text-xs font-bold font-mono tracking-widest text-blue-500 uppercase block mb-3">
+          <span className="text-xs font-bold font-mono tracking-widest text-brand-primary uppercase block mb-3">
             Ventajas Competitivas
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4 tracking-tight">
@@ -162,13 +162,13 @@ export default function AboutSection() {
                 <motion.div
                   key={val.title}
                   variants={itemVariants}
-                  whileHover={{ y: -6, borderColor: "rgba(59, 130, 246, 0.4)" }}
+                  whileHover={{ y: -6, borderColor: "rgba(27, 207, 239, 0.4)" }}
                   className="bg-slate-950/50 border border-slate-800/80 p-6 rounded-2xl flex flex-col items-start text-left transition-all relative group"
                 >
-                  <div className="bg-blue-900/30 text-blue-400 p-3 rounded-xl mb-4 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                  <div className="bg-brand-primary/10 text-brand-primary p-3 rounded-xl mb-4 group-hover:bg-brand-primary group-hover:text-[#19354C] transition-all">
                     <IconComponent className="h-6 w-6" />
                   </div>
-                  <h3 className="text-white font-bold text-base mb-2 group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-white font-bold text-base mb-2 group-hover:text-brand-primary transition-colors">
                     {val.title}
                   </h3>
                   <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
@@ -183,7 +183,7 @@ export default function AboutSection() {
         {/* SECTION 3: COMPANY VALUES */}
         <div className="border-t border-slate-800/80 pt-20">
           <div className="text-center mb-12">
-            <span className="text-xs font-bold font-mono tracking-widest text-blue-500 uppercase block mb-3">
+            <span className="text-xs font-bold font-mono tracking-widest text-brand-primary uppercase block mb-3">
               Ética y Metodología
             </span>
             <h2 className="text-3xl font-extrabold text-white mb-3">
@@ -202,7 +202,7 @@ export default function AboutSection() {
                   key={val.title}
                   className="bg-slate-950/20 border border-slate-800/30 p-6 rounded-xl text-left flex items-start gap-4 hover:bg-slate-950/40 transition-colors"
                 >
-                  <div className="bg-slate-900 p-2 rounded-lg text-blue-500 shrink-0">
+                  <div className="bg-slate-900 p-2 rounded-lg text-brand-primary shrink-0">
                     <IconComponent className="h-5 w-5" />
                   </div>
                   <div>
