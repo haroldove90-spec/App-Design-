@@ -17,7 +17,7 @@ export default function Footer() {
         <div className="lg:col-span-4 space-y-6">
           <div className="flex items-center">
             <img
-              src="https://appdesignproyectos.com/appdesignlogo.png"
+              src="https://appdesignproyectos.com/appdesignlogos.png"
               alt="App Design Logo"
               className="h-10 w-auto object-contain"
               referrerPolicy="no-referrer"

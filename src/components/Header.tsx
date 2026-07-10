@@ -78,7 +78,7 @@ export default function Header({ onQuoteClick }: HeaderProps) {
           id="header-brand-logo"
         >
           <img
-            src="https://appdesignproyectos.com/appdesignlogo.png"
+            src="https://appdesignproyectos.com/appdesignlogos.png"
             alt="App Design Logo"
             className="h-10 sm:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
             referrerPolicy="no-referrer"
