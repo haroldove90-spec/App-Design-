@@ -1,0 +1,6 @@
+{
+  "name": "App Design",
+  "description": "Agencia integral de tecnología, diseño, publicidad y desarrollo de software a la medida con más de 20 años de experiencia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
