@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
-import { Menu, X, ArrowRight, Code, MessageSquare, PhoneCall } from "lucide-react";
+import { Menu, X, ArrowRight, Code, MessageSquare, PhoneCall, Lock } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { CONTACT_INFO } from "../types";
 
 interface HeaderProps {
   onQuoteClick: () => void;
+  onAdminClick?: () => void;
 }
 
-export default function Header({ onQuoteClick }: HeaderProps) {
+export default function Header({ onQuoteClick, onAdminClick }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("inicio");
@@ -114,7 +115,17 @@ export default function Header({ onQuoteClick }: HeaderProps) {
         </nav>
 
         {/* Action Button & Contact */}
-        <div className="hidden lg:flex items-center gap-6" id="desktop-actions">
+        <div className="hidden lg:flex items-center gap-4" id="desktop-actions">
+          {onAdminClick && (
+            <button
+              onClick={onAdminClick}
+              className="p-2.5 text-slate-400 hover:text-brand-primary bg-slate-950 hover:bg-slate-900 rounded-xl border border-slate-800 transition-colors cursor-pointer"
+              title="Acceso Administrador"
+            >
+              <Lock className="h-4 w-4" />
+            </button>
+          )}
+          
           <a
             href={`https://wa.me/${CONTACT_INFO.whatsapp}`}
             target="_blank"
@@ -201,6 +212,19 @@ export default function Header({ onQuoteClick }: HeaderProps) {
                   <span>Cotizar Proyecto</span>
                   <ArrowRight className="h-5 w-5" />
                 </button>
+
+                {onAdminClick && (
+                  <button
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      onAdminClick();
+                    }}
+                    className="flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-900 text-slate-400 hover:text-brand-primary py-2.5 rounded-xl text-xs font-bold transition-all border border-slate-800 cursor-pointer mt-1"
+                  >
+                    <Lock className="h-3.5 w-3.5" />
+                    <span>Acceso Administrador</span>
+                  </button>
+                )}
               </div>
             </div>
           </motion.div>

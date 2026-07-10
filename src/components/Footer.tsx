@@ -1,7 +1,11 @@
 import { Code, Heart, MessageSquare, PhoneCall, Mail } from "lucide-react";
 import { CONTACT_INFO, BRANCHES } from "../types";
 
-export default function Footer() {
+interface FooterProps {
+  onAdminClick?: () => void;
+}
+
+export default function Footer({ onAdminClick }: FooterProps) {
   const handleScrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
@@ -118,8 +122,16 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="max-w-7xl mx-auto px-6 border-t border-slate-900 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
-        <div className="flex items-center gap-1.5 text-slate-500">
+        <div className="flex flex-col sm:flex-row items-center gap-4 text-slate-500">
           <span>© {new Date().getFullYear()} App Design Proyectos. Todos los derechos reservados.</span>
+          {onAdminClick && (
+            <button
+              onClick={onAdminClick}
+              className="text-slate-500 hover:text-brand-primary font-semibold flex items-center gap-1 transition-colors cursor-pointer bg-transparent border-0 p-0"
+            >
+              <span className="text-[11px]">• Acceso Administrativo</span>
+            </button>
+          )}
         </div>
         <div className="flex items-center gap-1.5 text-slate-500 font-mono text-[10px]">
           <span>Desarrollado con</span>

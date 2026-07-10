@@ -11,9 +11,11 @@ import ServicesSection from "./components/ServicesSection";
 import QuoteCalculator from "./components/QuoteCalculator";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
+import AdminPortal from "./components/AdminPortal";
 
 export default function App() {
   const [preselectedCategory, setPreselectedCategory] = useState<string>("");
+  const [showAdmin, setShowAdmin] = useState(false);
 
   const handleQuoteClick = () => {
     setPreselectedCategory("todos");
@@ -34,7 +36,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-brand-dark font-sans text-slate-300 selection:bg-blue-600 selection:text-white antialiased overflow-x-hidden">
       {/* Premium Sticky Navigation */}
-      <Header onQuoteClick={handleQuoteClick} />
+      <Header onQuoteClick={handleQuoteClick} onAdminClick={() => setShowAdmin(true)} />
 
       {/* Main Page Content */}
       <main>
@@ -55,7 +57,12 @@ export default function App() {
       </main>
 
       {/* Structured Footer */}
-      <Footer />
+      <Footer onAdminClick={() => setShowAdmin(true)} />
+
+      {/* Administrative Portal Overlay */}
+      {showAdmin && (
+        <AdminPortal onClose={() => setShowAdmin(false)} />
+      )}
     </div>
   );
 }

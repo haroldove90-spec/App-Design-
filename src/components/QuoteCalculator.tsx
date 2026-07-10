@@ -33,12 +33,12 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
 
   // Prices (MXN)
   const basePrices: { [key: string]: number } = {
-    logos: 6500,
-    impresa: 3500,
-    web: 11500,
-    ecommerce: 21500,
-    apps: 45000,
-    erp: 55000,
+    logos: 1800,
+    impresa: 500,
+    web: 3900,
+    ecommerce: 4500,
+    apps: 9900,
+    erp: 15000,
   };
 
   // Pre-select category if passed down
@@ -124,15 +124,68 @@ export default function QuoteCalculator({ preselectedCategory }: QuoteCalculator
     return list;
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!name || !email) return;
 
     setIsSubmitting(true);
-    setTimeout(() => {
+    
+    const selectedServicesList = getSelectedServicesList();
+    const quoteData = {
+      name,
+      email,
+      phone: phone || "",
+      services: selectedServicesList,
+      parameters: {
+        pagesCount: selectedServices.web ? pagesCount : 0,
+        itemsCount: selectedServices.ecommerce ? itemsCount : 0,
+        userRoleCount: selectedServices.erp ? userRoleCount : 0
+      },
+      total,
+      message: message || "Interesado en cotización de servicios"
+    };
+
+    try {
+      // 1. Post to full-stack backend
+      const response = await fetch("/api/quotes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(quoteData),
+      });
+      
+      if (!response.ok) {
+        throw new Error("Server response was not ok");
+      }
+
+      const resData = await response.json();
+      console.log("Saved to server:", resData);
+
+      // 2. Also save to localStorage as a robust client-side backup
+      const localQuotes = JSON.parse(localStorage.getItem("appdesign_quotes") || "[]");
+      const clientQuote = {
+        ...quoteData,
+        id: resData.quote?.id || ("quote_" + Math.random().toString(36).substring(2, 11)),
+        date: new Date().toISOString(),
+        status: "Nuevo"
+      };
+      localQuotes.unshift(clientQuote);
+      localStorage.setItem("appdesign_quotes", JSON.stringify(localQuotes));
+    } catch (err) {
+      console.error("Backend post failed, relying on localStorage fallback:", err);
+      // Ensure it still registers locally
+      const localQuotes = JSON.parse(localStorage.getItem("appdesign_quotes") || "[]");
+      const clientQuote = {
+        ...quoteData,
+        id: "local_" + Math.random().toString(36).substring(2, 11),
+        date: new Date().toISOString(),
+        status: "Nuevo"
+      };
+      localQuotes.unshift(clientQuote);
+      localStorage.setItem("appdesign_quotes", JSON.stringify(localQuotes));
+    } finally {
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 1500);
+    }
   };
 
   // WhatsApp Message Generator
