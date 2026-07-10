@@ -12,6 +12,7 @@ import QuoteCalculator from "./components/QuoteCalculator";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import AdminPortal from "./components/AdminPortal";
+import { scrollToSection } from "./utils";
 
 export default function App() {
   const [preselectedCategory, setPreselectedCategory] = useState<string>("");
@@ -19,18 +20,12 @@ export default function App() {
 
   const handleQuoteClick = () => {
     setPreselectedCategory("todos");
-    const el = document.getElementById("cotizador");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
+    scrollToSection("cotizador");
   };
 
   const handleServiceSelect = (categoryId: string) => {
     setPreselectedCategory(categoryId);
-    const el = document.getElementById("cotizador");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
+    scrollToSection("cotizador");
   };
 
   return (

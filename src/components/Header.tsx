@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, ArrowRight, Code, MessageSquare, PhoneCall, Lock } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { CONTACT_INFO } from "../types";
+import { scrollToSection } from "../utils";
 
 interface HeaderProps {
   onQuoteClick: () => void;
@@ -44,10 +45,7 @@ export default function Header({ onQuoteClick, onAdminClick }: HeaderProps) {
 
   const handleNavClick = (sectionId: string) => {
     setIsMobileMenuOpen(false);
-    const el = document.getElementById(sectionId);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
+    scrollToSection(sectionId);
   };
 
   const navLinks = [

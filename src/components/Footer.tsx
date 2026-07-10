@@ -1,5 +1,6 @@
 import { Code, Heart, MessageSquare, PhoneCall, Mail } from "lucide-react";
 import { CONTACT_INFO, BRANCHES } from "../types";
+import { scrollToSection } from "../utils";
 
 interface FooterProps {
   onAdminClick?: () => void;
@@ -7,10 +8,7 @@ interface FooterProps {
 
 export default function Footer({ onAdminClick }: FooterProps) {
   const handleScrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
+    scrollToSection(id);
   };
 
   return (

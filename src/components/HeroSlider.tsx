@@ -1,5 +1,6 @@
 import { ArrowRight, Sparkles, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
+import { scrollToSection } from "../utils";
 
 interface HeroSliderProps {
   onQuoteClick: () => void;
@@ -7,10 +8,7 @@ interface HeroSliderProps {
 
 export default function HeroSlider({ onQuoteClick }: HeroSliderProps) {
   const handleScrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
+    scrollToSection(id);
   };
 
   return (
